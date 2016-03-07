@@ -1,0 +1,10 @@
+require_relative 'memory'
+require_relative 'memex'
+require 'httparty'
+
+5.times do |dream_session|
+  memory = Memory.new ARGV[0]
+  extension = Memex.extend memory
+  Memory.make extension
+  Memory.dream if dream_session < 4
+end
